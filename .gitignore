@@ -36,3 +36,5 @@ Thumbs.db
 .fuse*
 node_modules
 dist
+
+secret.js

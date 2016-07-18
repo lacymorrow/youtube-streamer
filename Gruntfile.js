@@ -159,7 +159,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           globals: {
-            title: 'Long Game',
+            title: '',
           },
         },
         files: [
