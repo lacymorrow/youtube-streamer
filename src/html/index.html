@@ -10,14 +10,31 @@
     @@include('partials/_header.html', {"title": "Flymore"})
 
 
-    <div class="video-container">
+    <div class="flex-container">
+      <div class="main-container">
 
-      <div id="video"></div>
-
-    </div><!-- /.video-container -->
-
+        <div class="chat-toggle">
+          <img src="img/chat.png" />
+        </div>
+        <div class="video-container">
+          <div class="video">
+            <div id="video"></div>
+          </div>
+        </div><!-- /.video-container -->
+        <div id="chat">
+          <div id="content">
+              <textarea id="chatwindow" readonly></textarea>
+              <div class="bottom-box">
+                <input id="chatnick" type="text" maxlength="10" placeholder="username"><br />
+                <input id="chatmsg" type="text" maxlength="160"  onkeyup="keyup(event.keyCode);" placeholder="message">
+                <br />
+                <input type="button" value="Send" onclick="submit_msg();" style="cursor:pointer;border:1px solid gray;">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="tray">
-      <div class="toggle"><div class="chevron"></div></div>
       <ul class="video-list">
         <li>
           <img src="http://placehold.it/250x120">

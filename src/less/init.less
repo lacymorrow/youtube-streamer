@@ -2,21 +2,133 @@
 
 body {
 	font-family: 'Raleway', sans-serif;
+	background: black;
+}
+
+#logo {
+	width: 200px;
+	position: absolute;
+	z-index: 1;
+	opacity: .7;
+	margin: 3rem;
+	transition: opacity .5s ease;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.flex-container {
+
+}
+
+.main-container {
+	height: 100%;
+	display: flex;
 }
 
 .video-container {
+	flex: 1 0;
+	position: relative;
+}
+
+.video {
 	margin: 0 auto;
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
-.video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
+
+.chat-toggle {
+	position: fixed;
+	bottom: 1rem;
+	left: 1rem;
+	opacity: .6;
+	cursor: pointer;
+	z-index: 1;
+	&:hover {
+		opacity: 1;
+	}
+	img {
+		padding: 1rem;
+		width: 75px;
+	}
+}
+
+#chat {
+	overflow: hidden;
+	flex: 0 1;
+	display: block;
+	position: relative;
+	flex-basis: 0;
+    transition: flex-basis .5s ease;
+	&.open {
+		flex-basis: 300px;
+	}
+}
+#content {
+	height: 85%;
+	display: flex;
+	flex-direction: column;
+}
+
+#chatwindow {
 	width: 100%;
-	height: 100%;
+	flex: 1 0;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.bottom-box {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	input {
+		width: 100%;
+		padding: 1rem;
+
+	}
+}
+
+
+@media (max-width: 720px) {
+  .chat {
+    display: none;
+  }
+}
+
+.tray {
+	display: none;
+	flex: 0 1 300px;
+	background-color: green;
+	.toggle {
+		margin: 0 auto;
+		height: 30px;
+		background-color: blue;
+		color: #222;
+
+	}
+	ul.video-list {
+		background-color: black;
+		list-style: none;
+		li {
+			float: left;
+			width: 24%;
+		}
+	}
+	&:after {
+		display: table;
+		content: '';
+		clear: both;
+	}
 }
 
 
@@ -32,28 +144,4 @@ body {
 	transform: rotate(-45deg);
 	vertical-align: top;
 	width: 0.45em;
-}
-
-.tray {
-	background-color: green;
-	.toggle {
-		margin: 0 auto;
-		margin-top: -30px;
-		height: 30px;
-		background-color: blue;
-		color: #222;
-
-	}
-	ul.video-list {
-		list-style: none;
-		li {
-			float: left;
-			width: 24%;
-		}
-	}
-	&:after {
-		display: table;
-		content: '';
-		clear: both;
-	}
 }

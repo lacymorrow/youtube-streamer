@@ -1,7 +1,7 @@
 'use strict';
 
 var player;
-var streamID = "614op8uTsY8";
+var streamID = "jJdPi0XD6fY";
 var channelID = "UC_rTKZjMrtXJSOfhwLzJAPw";
 var pollInterval = 3;
 var playingHD = false;
@@ -66,5 +66,19 @@ function onError(event) {
     onYouTubePlayerAPIReady();
 }
 
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    // enter pressed
+    $('.tray').toggleClass('open');
+    console.log('debug');
+  }
+
+});
+
+$(function (e) {
+    $('.chat-toggle').click(function () {
+      $('#chat').toggleClass('open');
+    });
+});
 
 //http://stackoverflow.com/questions/30393289/youtube-api-3-get-last-videos-from-specific-user
